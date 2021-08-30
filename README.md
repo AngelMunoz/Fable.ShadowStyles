@@ -1,12 +1,11 @@
 # ShadowStyles
 
-[constructable stylesheets]: https://developers.google.com/web/updates/2019/02/constructable-stylesheets
-
-[Fable.Haunted] https://github.com/AngelMunoz/Fable.Haunted
-[lit-html] https://github.com/alfonsogarciacaro/Fable.Lit
-[Sutil] https://github.com/davedawkins/Sutil
+[fable.haunted]: https://github.com/AngelMunoz/Fable.Haunted
+[lit-html]: https://github.com/alfonsogarciacaro/Fable.Lit
+[sutil]: https://github.com/davedawkins/Sutil
 [css in js]: https://medium.com/dailyjs/what-is-actually-css-in-js-f2f529a2757
-[Feliz.Engine]: https://github.com/alfonsogarciacaro/Feliz.Engine
+[feliz.engine]: https://github.com/alfonsogarciacaro/Feliz.Engine
+[constructable stylesheets]: https://developers.google.com/web/updates/2019/02/constructable-stylesheets
 
 > Powered by [Feliz.Engine]
 
