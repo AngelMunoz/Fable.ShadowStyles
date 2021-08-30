@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IsPackable>true</IsPackable>
+    <WarnOn>3390;$(WarnOn)</WarnOn>
+    <Version>1.0.0-beta-001</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="*.fsproj; *.fs; *.js;" Exclude="**\*.fs.js; **\*.mjs" PackagePath="fable\" />
+  </ItemGroup>  
+
+  <ItemGroup>
+    <Compile Include="ShadowStyles.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Browser.Css" Version="2.0.4" />
+    <PackageReference Include="Fable.Haunted" Version="1.0.0-beta-007" />
+    <PackageReference Include="Feliz.Engine" Version="1.0.0-beta-004" />
+  </ItemGroup>
+
+</Project>
