@@ -10,6 +10,12 @@ module Types =
     [<AutoOpen>]
     module Extensions =
 
+        [<Emit("Array.from(document.styleSheets)")>]
+        let private stylesheets: CSSStyleSheet array = jsNative
+
+        [<Emit("Array.from($0.cssRules)")>]
+        let private getRules (sheet: CSSStyleSheet) : Browser.Types.CSSRule array = jsNative
+
         type CSSStyleSheet with
             /// <summary>
             /// replaces the content of the stylesheet with the content passed into it.
@@ -29,6 +35,33 @@ module Types =
             /// </remarks>
             [<Emit("$0.replaceSync($1)")>]
             member __.replaceSync(value: string) : unit = jsNative
+
+            /// <summary>
+            /// creates a Constructable CSSStyleSheet object with css rules passed as a string.
+            /// </summary>
+            static member FromString(css: string) : CSSStyleSheet =
+                let sheet = CSSStyleSheet.Create()
+                sheet.replaceSync (css)
+                sheet
+
+            /// <summary>
+            /// creates a construtable CSSStyleSheet array from the stylesheets in the document.
+            /// </summary>
+            /// <remarks>
+            /// This method should be called once per application.
+            /// </remarks>
+            static member FromDocument() =
+                lazy
+                    (seq {
+                        for sheet in stylesheets do
+                            let textRules =
+                                getRules sheet
+                                |> Array.fold (fun curr (next: Browser.Types.CSSRule) -> $"{curr}\n{next.cssText}") ""
+
+                            let sheet = CSSStyleSheet.Create()
+                            sheet.replaceSync (textRules)
+                            sheet
+                     })
 
         type Element with
             /// returns this DocumentOrShadow adopted stylesheets or sets them.
