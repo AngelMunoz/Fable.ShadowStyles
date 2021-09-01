@@ -5,7 +5,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IsPackable>true</IsPackable>
     <WarnOn>3390;$(WarnOn)</WarnOn>
-    <Version>1.0.0-beta-001</Version>
+    <Version>1.0.0-beta-002</Version>
   </PropertyGroup>
 
   <ItemGroup>
