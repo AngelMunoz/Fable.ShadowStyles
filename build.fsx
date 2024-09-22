@@ -1,11 +1,11 @@
 #!/usr/bin/env -S dotnet fsi
-#r "nuget: Fake.DotNet.Cli, 5.20.4"
-#r "nuget: Fake.IO.FileSystem, 5.20.4"
-#r "nuget: Fake.Core.Target, 5.20.4"
-#r "nuget: Fake.DotNet.MsBuild, 5.20.4"
-#r "nuget: MSBuild.StructuredLogger, 2.1.507"
+#r "nuget: Fake.DotNet.Cli, 6.1.1"
+#r "nuget: Fake.IO.FileSystem, 6.1.1"
+#r "nuget: Fake.Core.Target, 6.1.1"
+#r "nuget: Fake.DotNet.MsBuild, 6.1.1"
+#r "nuget: MSBuild.StructuredLogger, 2.2.350"
 #r "nuget: System.IO.Compression.ZipFile, 4.3.0"
-#r "nuget: System.Reactive"
+#r "nuget: System.Reactive, 6.0.1"
 
 open System
 open Fake.Core
